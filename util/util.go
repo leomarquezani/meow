@@ -12,7 +12,7 @@ func ResponseOk(w http.ResponseWriter, body interface{}) {
 	json.NewEncoder(w).Encode(body)
 }
 
-func ResponseError(w http.ResponseWriter, int code, message string) {
+func ResponseError(w http.ResponseWriter, code int, message string) {
 	w.WriteHeader(code)
 	w.Header().Set("Content-Type", "application/json")
 

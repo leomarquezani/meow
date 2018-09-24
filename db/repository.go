@@ -19,7 +19,7 @@ func SetRepository(repository Repository) {
 }
 
 func Close() {
-	impl.Close
+	impl.Close()
 }
 
 func InsertMeow(ctx context.Context, meow schema.Meow) error {

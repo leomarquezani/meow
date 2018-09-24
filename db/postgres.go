@@ -50,10 +50,9 @@ func (r *PostgresRepository) ListMeows(ctx context.Context, skip uint64, take ui
 		if err = rows.Scan(&meow.Id, &meow.Body, &meow.CreatedAt); err == nil {
 			meows = append(meows, meow)
 		}
-
-		if err = rows.Err(); err != nil {
-			return nil, err
-		}
-		return meows, nil
 	}
+	if err = rows.Err(); err != nil {
+		return nil, err
+	}
+	return meows, nil
 }
