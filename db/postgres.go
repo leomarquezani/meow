@@ -3,7 +3,8 @@ package db
 import (
 	"context"
 	"database/sql"
-
+	
+	_ "github.com/lib/pq"
 	"github.com/leomarquezani/meow/schema"
 )
 
