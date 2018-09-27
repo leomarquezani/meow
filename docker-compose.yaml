@@ -49,3 +49,11 @@ services:
       - "6767"
     environment: 
       NATS_ADDRESS: "nats:4222"
+  nginx:
+    build: "./nginx"
+    ports:
+      - "6767:80"
+    depends_on: 
+      - "meow"
+      - "pusher"
+      - "query"
